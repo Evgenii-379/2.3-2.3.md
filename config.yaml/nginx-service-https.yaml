@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: netology-https
+spec:
+  selector:
+    app: nginx-app
+  ports:
+    - protocol: TCP
+      port: 443
+      targetPort: 80
+  type: ClusterIP
