@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-html
+  namespace: netology-https
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Моя защищённая страница</title>
+    </head>
+    <body>
+        <h1>Добро пожаловать в Nginx с HTTPS!</h1>
+        <p>Это защищённая страница, работающая через HTTPS.</p>
+    </body>
+    </html>
