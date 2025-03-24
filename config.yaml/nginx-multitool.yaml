@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-multitool-deployment
+  namespace: netology-config
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-multitool
+  template:
+    metadata:
+      labels:
+        app: nginx-multitool
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config-volume
+          mountPath: /etc/nginx/conf.d
+        - name: nginx-html-volume
+          mountPath: /usr/share/nginx/html
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        command: ["sh", "-c", "while true; do sleep 3600; done"]
+      volumes:
+      - name: nginx-config-volume
+        configMap:
+          name: nginx-config
+      - name: nginx-html-volume
+        configMap:
+          name: nginx-html
