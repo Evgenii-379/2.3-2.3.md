@@ -216,6 +216,7 @@ spec:
 
 [nginx-service-https.yaml](https://github.com/Evgenii-379/2.3-2.3.md/blob/main/config.yaml/nginx-service-https.yaml)
 
+[nginx-tls-secret.yaml](https://github.com/Evgenii-379/2.3-2.3.md/blob/main/config.yaml/nginx-tls-secret.yaml)
 
 
 
